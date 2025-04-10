@@ -27,7 +27,8 @@ const ore = ref(0)
       <div class="row">
         <div class="col-12 d-flex justify-content-center img-section">
           <div>
-            <img src="file:///Users/adamborup/Downloads/photo-1739723745127-d30d865d9cba-removebg-preview.png"
+            <img @click="ore++"
+              src="file:///Users/adamborup/Downloads/photo-1739723745127-d30d865d9cba-removebg-preview.png"
               alt="image of the moon">
           </div>
         </div>
