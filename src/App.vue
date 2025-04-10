@@ -2,10 +2,13 @@
 import { computed } from 'vue'
 import { AppState } from './AppState.js'
 import { ref } from 'vue';
+import { mineService } from "./services/MineService.js";
 
-const ore = ref(0)
+const ore = computed(() => AppState.ore)
 
-
+function mine() {
+  mineService.increaseOre()
+}
 
 
 </script>
@@ -27,7 +30,7 @@ const ore = ref(0)
       <div class="row">
         <div class="col-12 d-flex justify-content-center img-section">
           <div>
-            <img @click="ore++"
+            <img @click="mine()"
               src="file:///Users/adamborup/Downloads/photo-1739723745127-d30d865d9cba-removebg-preview.png"
               alt="image of the moon">
           </div>
