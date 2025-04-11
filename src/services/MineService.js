@@ -30,6 +30,7 @@ class MineService {
     upgrade.quantity++
     AppState.ore -= upgrade.price
     console.log(AppState.ore, upgrade)
+    AppState.clickUpgrades.forEach(upgrade => AppState.ore += (upgrade.mineAbility * upgrade.quantity))
   }
 
   addOreFromAutoUpgrade() {
