@@ -1,5 +1,5 @@
 import { AppState } from "@/AppState.js"
-import { ClickUpgrade } from "@/models/Upgrades.js"
+import { ClickUpgrade, AutoUpgrade } from "@/models/Upgrades.js"
 
 
 class MineService {
@@ -9,9 +9,27 @@ class MineService {
     AppState.ore++
   }
 
-  purchaseClickUpgrade(ClickUpgrade) {
-    ClickUpgrade.quantity++
-    console.log('click upgrade works!')
+  /** @param {ClickUpgrade} upgrade */
+  purchaseClickUpgrade(upgrade) {
+
+    if (AppState.ore < upgrade.price) {
+      window.alert('Not Enough Ore!')
+      return
+    }
+    upgrade.quantity++
+    AppState.ore -= upgrade.price
+    console.log(AppState.ore, upgrade)
+  }
+
+  /** @param {AutoUpgrade} upgrade */
+  purchaseAutoUpgrade(upgrade) {
+    if (AppState.ore < upgrade.price) {
+      window.alert('Not Enough Ore!')
+      return
+    }
+    upgrade.quantity++
+    AppState.ore -= upgrade.price
+    console.log(AppState.ore, upgrade)
   }
 
 }
