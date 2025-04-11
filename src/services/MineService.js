@@ -1,4 +1,5 @@
 import { AppState } from "@/AppState.js"
+import { ClickUpgrade } from "@/models/Upgrades.js"
 
 
 class MineService {
@@ -8,6 +9,10 @@ class MineService {
     AppState.ore++
   }
 
+  purchaseClickUpgrade(ClickUpgrade) {
+    ClickUpgrade.quantity++
+    console.log('click upgrade works!')
+  }
 
 }
 

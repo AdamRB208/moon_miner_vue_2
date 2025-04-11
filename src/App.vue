@@ -16,6 +16,10 @@ function mine() {
   mineService.increaseOre()
 }
 
+function purchaseClickUpgrade(ClickUpgrade) {
+  mineService.purchaseClickUpgrade(ClickUpgrade)
+}
+
 
 </script>
 
@@ -57,7 +61,7 @@ function mine() {
         <div class="col-md-4">
           <div v-for="clickUpgrade in clickUpgrades" :key="clickUpgrade.name" class="m-5 p-3 bg-secondary rounded"
             style="--bs-bg-opacity: .7;">Click Upgrade:
-            <button class="mt-2 btn btn-outline-warning rounded fs-3" type="button">
+            <button @click="purchaseClickUpgrade()" class="mt-2 btn btn-outline-warning rounded fs-3" type="button">
               <div>{{ clickUpgrade.name }}</div>
             </button>
             <div class="mt-2">Item price: {{ clickUpgrade.price }}</div>
