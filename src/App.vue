@@ -18,8 +18,8 @@ function mine() {
   <header>
     <div class="container d-flex justify-content-center">
       <div class="row">
-        <div class="col-12 mb-3 mt-3">
-          <h1>🌘 MoonMiner 🌒</h1>
+        <div class="col-12 mb-5 mt-4">
+          <h1>🌘 Moon Miner 🌒</h1>
         </div>
       </div>
     </div>
@@ -37,11 +37,28 @@ function mine() {
         </div>
       </div>
     </section>
-    <section class="container-fluid d-flex justify-content-center">
+    <section class="container-fluid d-flex justify-content-center ore-section">
       <div class="row">
         <div class="col-md-2 d-flex">
-          <div class="d-flex align-items-center bg-secondary rounded p-2 text-nowrap">Total Ore Mined: {{
+          <div class="d-flex align-items-center bg-secondary rounded p-2 mb-1 text-nowrap">Total Ore Mined: {{
             ore }}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid upgrades-section">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="m-5 p-3 bg-secondary rounded" style="--bs-bg-opacity: .5;">click upgrades here
+            <p class="mt-3">pickaxe here</p>
+            <p>drill here</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="m-5 p-3 bg-secondary rounded" style="--bs-bg-opacity: .5;">auto upgrades here
+            <p class="mt-3">astronaut here</p>
+            <p>rover here</p>
+          </div>
         </div>
       </div>
     </section>
@@ -55,10 +72,31 @@ function mine() {
 @import "./assets/scss/main.scss";
 
 header {
-  background-color: gray;
+  background-image: url("https://media.istockphoto.com/id/140088435/photo/silver-armour-metal-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=kLG_ebQ0ugSbGRaiRBaaRajscF34BYd6olFuF6hPRlQ=");
+  background-size: cover;
+  color: rgb(233, 233, 53);
+  text-shadow: 2px, 2px;
 }
 
 .img-section {
   background-color: #607c8b;
+}
+
+.ore-section {
+  background-color: #607c8b;
+  color: rgb(233, 233, 53);
+  text-shadow: 2px, 2px;
+}
+
+.upgrades-section {
+  background-image: url("https://media.istockphoto.com/id/140088435/photo/silver-armour-metal-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=kLG_ebQ0ugSbGRaiRBaaRajscF34BYd6olFuF6hPRlQ=");
+  background-size: cover;
+  text-shadow: 2px, 2px;
+  color: rgb(233, 233, 53);
+}
+
+footer {
+  background-image: url("https://media.istockphoto.com/id/140088435/photo/silver-armour-metal-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=kLG_ebQ0ugSbGRaiRBaaRajscF34BYd6olFuF6hPRlQ=");
+  background-size: cover;
 }
 </style>
