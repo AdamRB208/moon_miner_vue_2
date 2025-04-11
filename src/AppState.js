@@ -1,4 +1,5 @@
 import { reactive } from 'vue'
+import { AutoUpgrade, ClickUpgrade } from './models/Upgrades.js'
 
 
 export const AppState = reactive({
@@ -11,28 +12,28 @@ export const AppState = reactive({
 
   clickUpgrades: [
     new ClickUpgrade({
-      name: 'pickaxe',
+      name: '⛏️ pickaxe',
       price: 5,
       quantity: 0,
       mineAbility: 1,
     }),
     new ClickUpgrade({
-      name: 'drill',
+      name: '⚙ drill',
       price: 10,
       quantity: 0,
       mineAbility: 5,
     }),
   ],
 
-  AutoUpgrades: [
+  autoUpgrades: [
     new AutoUpgrade({
-      name: 'astronaut',
+      name: '🧑🏼‍🚀 astronaut',
       price: 25,
       quantity: 0,
       mineAbility: 20,
     }),
     new AutoUpgrade({
-      name: 'rover',
+      name: '🚜 rover',
       price: 50,
       quantity: 0,
       mineAbility: 30,

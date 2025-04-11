@@ -6,6 +6,12 @@ import { mineService } from "./services/MineService.js";
 
 const ore = computed(() => AppState.ore)
 
+const clickUpgrades = computed(() => AppState.clickUpgrades)
+
+const autoUpgrades = computed(() => AppState.autoUpgrades)
+
+
+
 function mine() {
   mineService.increaseOre()
 }
@@ -49,15 +55,25 @@ function mine() {
     <section class="container-fluid upgrades-section">
       <div class="row">
         <div class="col-md-4">
-          <div class="m-5 p-3 bg-secondary rounded" style="--bs-bg-opacity: .5;">click upgrades here
-            <p class="mt-3">pickaxe here</p>
-            <p>drill here</p>
+          <div v-for="clickUpgrade in clickUpgrades" :key="clickUpgrade.name" class="m-5 p-3 bg-secondary rounded"
+            style="--bs-bg-opacity: .7;">Click Upgrade:
+            <button class="mt-2 btn btn-outline-warning rounded fs-3" type="button">
+              <div>{{ clickUpgrade.name }}</div>
+            </button>
+            <div class="mt-2">Item price: {{ clickUpgrade.price }}</div>
+            <div class="mt-2">Item quantity: {{ clickUpgrade.quantity }}</div>
+            <div class="mt-2">Item mine ability: {{ clickUpgrade.mineAbility }}</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="m-5 p-3 bg-secondary rounded" style="--bs-bg-opacity: .5;">auto upgrades here
-            <p class="mt-3">astronaut here</p>
-            <p>rover here</p>
+          <div v-for="autoUpgrade in autoUpgrades" :key="autoUpgrade.name" class="m-5 p-3 bg-secondary rounded"
+            style="--bs-bg-opacity: .7;">Auto Upgrade:
+            <button class="mt-2 btn btn-outline-warning rounded fs-3" type="button">
+              <div>{{ autoUpgrade.name }}</div>
+            </button>
+            <div class="mt-2">Item price: {{ autoUpgrade.price }}</div>
+            <div class="mt-2"> Item quantity: {{ autoUpgrade.quantity }}</div>
+            <div class="mt-2">Item mine ability: {{ autoUpgrade.mineAbility }}</div>
           </div>
         </div>
       </div>
@@ -74,8 +90,8 @@ function mine() {
 header {
   background-image: url("https://media.istockphoto.com/id/140088435/photo/silver-armour-metal-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=kLG_ebQ0ugSbGRaiRBaaRajscF34BYd6olFuF6hPRlQ=");
   background-size: cover;
-  color: rgb(233, 233, 53);
-  text-shadow: 2px, 2px;
+  color: #ffc105;
+  text-shadow: 2px, 2px, 2px, black;
 }
 
 .img-section {
@@ -84,15 +100,15 @@ header {
 
 .ore-section {
   background-color: #607c8b;
-  color: rgb(233, 233, 53);
-  text-shadow: 2px, 2px;
+  color: #ffc105;
+  text-shadow: 2px, 2px, 2px, black;
 }
 
 .upgrades-section {
   background-image: url("https://media.istockphoto.com/id/140088435/photo/silver-armour-metal-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=kLG_ebQ0ugSbGRaiRBaaRajscF34BYd6olFuF6hPRlQ=");
   background-size: cover;
-  text-shadow: 2px, 2px;
-  color: rgb(233, 233, 53);
+  text-shadow: 3px, 3px;
+  color: #ffc105;
 }
 
 footer {
