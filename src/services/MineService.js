@@ -32,6 +32,10 @@ class MineService {
     console.log(AppState.ore, upgrade)
   }
 
+  addOreFromAutoUpgrade() {
+    AppState.autoUpgrades.forEach(AutoUpgrade => AppState.ore += (AutoUpgrade.mineAbility * AutoUpgrade.quantity))
+  }
+
 }
 
 export const mineService = new MineService()

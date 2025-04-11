@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { AppState } from './AppState.js'
 import { ref } from 'vue';
 import { mineService } from "./services/MineService.js";
@@ -24,6 +24,10 @@ function purchaseAutoUpgrade(upgrade) {
   mineService.purchaseAutoUpgrade(upgrade)
 
 }
+
+onMounted(() => {
+  setInterval(mineService.addOreFromAutoUpgrade, 3000)
+})
 
 </script>
 
