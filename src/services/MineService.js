@@ -18,6 +18,8 @@ class MineService {
     }
     upgrade.quantity++
     AppState.ore -= upgrade.price
+    upgrade.mineAbility++
+    upgrade.price++
     console.log(AppState.ore, upgrade)
   }
 
@@ -29,12 +31,18 @@ class MineService {
     }
     upgrade.quantity++
     AppState.ore -= upgrade.price
+    upgrade.mineAbility++
+    upgrade.price++
     console.log(AppState.ore, upgrade)
-    AppState.clickUpgrades.forEach(upgrade => AppState.ore += (upgrade.mineAbility * upgrade.quantity))
+    AppState.autoUpgrades.forEach(upgrade => AppState.ore += (upgrade.mineAbility * upgrade.quantity))
   }
 
   addOreFromAutoUpgrade() {
     AppState.autoUpgrades.forEach(AutoUpgrade => AppState.ore += (AutoUpgrade.mineAbility * AutoUpgrade.quantity))
+  }
+
+  addOreFromClickUpgrade() {
+    AppState.clickUpgrades.forEach(clickUpgrade => AppState.ore += (clickUpgrade.mineAbility * clickUpgrade.quantity))
   }
 
 }

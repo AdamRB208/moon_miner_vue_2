@@ -14,6 +14,7 @@ const autoUpgrades = computed(() => AppState.autoUpgrades)
 
 function mine() {
   mineService.increaseOre()
+  mineService.addOreFromClickUpgrade()
 }
 
 function purchaseClickUpgrade(upgrade) {
@@ -68,7 +69,7 @@ onMounted(() => {
       <div class="row upgrades-row">
         <div class="col-md-4">
           <div v-for="clickUpgrade in clickUpgrades" :key="clickUpgrade.name" class="m-5 p-3 bg-secondary rounded"
-            style="--bs-bg-opacity: .7;">Click Upgrade:
+            style="--bs-bg-opacity: .8;">Click Upgrade:
             <button @click="purchaseClickUpgrade(clickUpgrade)" class="mt-2 btn btn-outline-warning rounded fs-3"
               type="button">
               <div>{{ clickUpgrade.name }}</div>
@@ -80,7 +81,7 @@ onMounted(() => {
         </div>
         <div class="col-md-4">
           <div v-for="autoUpgrade in autoUpgrades" :key="autoUpgrade.name" class="m-5 p-3 bg-secondary rounded"
-            style="--bs-bg-opacity: .7;">Auto Upgrade:
+            style="--bs-bg-opacity: .8;">Auto Upgrade:
             <button @click="purchaseAutoUpgrade(autoUpgrade)" class="mt-2 btn btn-outline-warning rounded fs-3"
               type="button">
               <div>{{ autoUpgrade.name }}</div>
